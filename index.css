@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 240px;
+   
+}
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.container-items{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: cardEntrance 500ms ease-out;
+    animation-fill-mode: backwards;
+   
+}
+.container-items:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.05);
+ }
+
+ @media (min-width: 600px){
+    .item-row {
+        grid-row: span 2 / auto;
+    }
+
+    .item-column{
+        grid-column: span 2 / auto;
+    }
+}
+
